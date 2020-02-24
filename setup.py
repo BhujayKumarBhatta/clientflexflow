@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 
-def readme():
-    with open('README.md') as f:
-        return f.read()
+# def readme():
+#     with open('README.md') as f:
+#         return f.read()
 
 
 setup(name='clientflexflow',
-      version='1',
-      description='flexflow client',
-      long_description=readme(),
+      version='1.2',
+      description=' disabled readme flexflow client ',
+      #long_description=readme(),
       url='https://gitlab.net.itc/tsp-billing/clientpaperhouse',
       author='Bhujay Kumar Bhatta',
       author_email='bhujay.bhatta@yahoo.com',
