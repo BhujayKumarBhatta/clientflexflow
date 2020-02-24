@@ -7,8 +7,8 @@ from setuptools import setup, find_packages
 
 
 setup(name='clientflexflow',
-      version='1.2',
-      description=' disabled readme flexflow client ',
+      version='1.3',
+      description=' c.get_wfmobj_keys(objname) ',
       #long_description=readme(),
       url='https://gitlab.net.itc/tsp-billing/clientpaperhouse',
       author='Bhujay Kumar Bhatta',

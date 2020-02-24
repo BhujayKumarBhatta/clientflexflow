@@ -36,6 +36,8 @@ class clientflexflow():
     t = Client(cfg)
     t.get_token()
     c = clientflexflow(t)
+    c.get_wfmobj_keys('Wfstats')
+    #['name']
     data= [{"name": "ABC"}]
     c.add_wfmasterObj('Wfstatus', data)
     #{'message': 'has been registered', 'status': 'success'}
@@ -65,6 +67,10 @@ class clientflexflow():
 #         
     
     ################# clientpaperhouse routes   ##############################################
+    
+    def get_wfmobj_keys(self, objname):
+        api_route = '/get_wfmobj_keys/{}'.format(objname)
+        return self.get_request(api_route)
     
     def add_wfmasterObj(self, objname, data:dict):
         api_route = '/add/{}'.format(objname)
