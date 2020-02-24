@@ -105,6 +105,17 @@ class clientflexflow():
         api_route = '/delete/{}'.format(objname)
         result = self.post_request(api_route, filter)
         return result
+    
+    def delete_wfmasterObj_by_name(self, objname, filter):
+        '''
+        filter_data = {"name": "DEF"}
+        c.delete_wfmasterObj('Wfstatus', filter_data)
+        #"{'name': 'DEF'} has been  deleted successfully"
+
+        filter must be provided to avoid accidental delete all'''
+        api_route = '/delete_by_name/{}/{}'.format(objname, filter)
+        result = self.delete_request(api_route)
+        return result
 
    
         
@@ -181,12 +192,25 @@ class clientflexflow():
         return r_dict
     
     
-    def delete_request(self, api_route, filter:dict ):
+    def delete_request_post(self, api_route, filter:dict ):
         service_ep, headers = self.get_service_ep_n_auth_header(api_route)
         try:  
             r = requests.delete(service_ep, 
                                 headers=headers,
                                 data = json.dumps(filter),
+                                verify=self.ssl_verify,                                 
+                                )           
+        except Exception as e:
+            r_dict = {'error': 'could not connect to server , the error is {}'.format(e)}
+            print(r_dict)
+        r_dict = self.handle_response(r)        
+        return r_dict
+    
+    def delete_request(self, api_route):
+        service_ep, headers = self.get_service_ep_n_auth_header(api_route)
+        try:  
+            r = requests.delete(service_ep, 
+                                headers=headers,
                                 verify=self.ssl_verify,                                 
                                 )           
         except Exception as e:

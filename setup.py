@@ -7,8 +7,8 @@ from setuptools import setup, find_packages
 
 
 setup(name='clientflexflow',
-      version='1.3',
-      description=' c.get_wfmobj_keys(objname) ',
+      version='1.4',
+      description=' c.delete_wfmasterObj_by_name ',
       #long_description=readme(),
       url='https://gitlab.net.itc/tsp-billing/clientpaperhouse',
       author='Bhujay Kumar Bhatta',
