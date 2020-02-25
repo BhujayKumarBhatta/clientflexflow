@@ -83,6 +83,12 @@ class clientflexflow():
         result = self.post_request(api_route, filter)
         return result
     
+    def list_wfmasterObj_by_key_val(self, objname, key, val):
+        '''instead of GET it is a POST request because with post we can send multiple keys as filter, whereas with get we can pass only a single key and value'''
+        api_route = '/list/{}/{}/{}'.format(objname, key,val)
+        result_lst = self.get_request(api_route)
+        return result_lst[0]
+    
     def update_wfmasterObj(self, objname, data:dict):
         ''' data_dict = {"update_data_dict": {"name": "DEF"},
                      "search_filter": {"name": "ABC"}
