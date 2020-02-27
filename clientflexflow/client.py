@@ -180,7 +180,22 @@ class clientflexflow():
                     " the text returned by the server is {}".format(
                         return_response.text)}
         return r_dict
-        
+    
+#     def handle_response(self, return_response):
+#         
+#         try:
+#             r_dict = json.loads(return_response.content.decode())
+#         except Exception as e:
+#             if isinstance(return_response, dict):
+#                 r_dict = {"status": "Failed",
+#                       "message": "Either the server is not running or there is a server fault."}
+#             else:
+#                 r_dict = {
+#                       "Content returned by the server is not json serializable"
+#                     " checking the server log  might  help. "
+#                     " the text returned by the server is {}".format(
+#                         return_response.text)}
+#         return r_dict   
         
     def post_request(self , api_route, data):        
         service_ep, headers = self.get_service_ep_n_auth_header(api_route)
