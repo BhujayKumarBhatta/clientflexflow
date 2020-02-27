@@ -7,8 +7,8 @@ from setuptools import setup, find_packages
 
 
 setup(name='clientflexflow',
-      version='1.5',
-      description=' c.list_wfmasterObj_by_key_val',
+      version='1.6',
+      description=' c.upload_xl',
       #long_description=readme(),
       url='https://gitlab.net.itc/tsp-billing/clientpaperhouse',
       author='Bhujay Kumar Bhatta',

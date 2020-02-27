@@ -122,6 +122,21 @@ class clientflexflow():
         api_route = '/delete_by_name/{}/{}'.format(objname, filter)
         result = self.delete_request(api_route)
         return result
+    
+    def upload_xl(self, wfdoctype, filepath):
+        ''' wfdoctype is workflow document type which are configured in the felxflow server.
+        all the columns in excel has to match with the fields configured in the wfdoctype. 
+        You need to consult with the felxflow admin for the doctype and its configs
+        
+        file path is the full path fo the excel file that need to be uploaded
+        filepath = '/home/bbhatta/Documents/sample_inv_upload_v2.xlsx'
+
+        '''
+        
+        api_route = '/wfdoc/uploadxl/{}'.format(wfdoctype)
+        result = self.file_request_post(api_route, filepath)
+        return result
+        
 
    
         
