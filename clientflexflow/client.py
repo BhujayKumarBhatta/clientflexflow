@@ -138,9 +138,17 @@ class clientflexflow():
         return result
         
     def get_wfdoc_fulldetail(self, uniquename):
-        '''instead of GET it is a POST request because with post we can send multiple keys as filter, whereas with get we can pass only a single key and value'''
+        '''used for dash board to view the action_in_current_stauts and editable_fields_in_current_status'''
         api_route = '/wfdoc/get_fulldetail/{}'.format(uniquename)
         result_lst = self.get_request(api_route)
+        return result_lst
+    
+    def wfdoc_update(self, input_data:dict):
+        '''should be used to update the workflow doc and dont use the update master methods
+        input_data = {"wfdoc_name": , "intended_action":, "doc_data":, }
+         '''
+        api_route = '/wfdoc/update'
+        result_lst = self.post_request(api_route, input_data)
         return result_lst
    
         
