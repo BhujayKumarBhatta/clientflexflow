@@ -137,7 +137,11 @@ class clientflexflow():
         result = self.file_request_post(api_route, filepath)
         return result
         
-
+    def get_wfdoc_fulldetail(self, uniquename):
+        '''instead of GET it is a POST request because with post we can send multiple keys as filter, whereas with get we can pass only a single key and value'''
+        api_route = '/wfdoc/get_fulldetail/{}'.format(uniquename)
+        result_lst = self.get_request(api_route)
+        return result_lst
    
         
     ################# clientpaperhouse routes   ##############################################
