@@ -123,6 +123,12 @@ class clientflexflow():
         result = self.delete_request(api_route)
         return result
     
+    
+    def create_wfdoc(self, doctype, doc_data):
+        api_route = '//wfdoc/create/{}'.format(doctype)
+        return self.post_request(api_route, doc_data)
+    
+    
     def upload_xl(self, wfdoctype, filepath):
         ''' wfdoctype is workflow document type which are configured in the felxflow server.
         all the columns in excel has to match with the fields configured in the wfdoctype. 
