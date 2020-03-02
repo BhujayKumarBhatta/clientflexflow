@@ -132,7 +132,7 @@ class clientflexflow():
     
     
     def create_wfdoc(self, doctype, doc_data):
-        api_route = '//wfdoc/create/{}'.format(doctype)
+        api_route = '/wfdoc/create/{}'.format(doctype)
         return self.post_request(api_route, doc_data)
     
     
