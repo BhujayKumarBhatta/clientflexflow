@@ -68,6 +68,13 @@ class clientflexflow():
     
     ################# clientpaperhouse routes   ##############################################
     
+    def get_wfdoctype_fulldetail(self, doctype):
+        '''used for dash board to create dynamic docdata fields for for creating wfdoc'''
+        api_route = '/wfdoctype/get_fulldetail/{}'.format(doctype)
+        result_lst = self.get_request(api_route)
+        return result_lst
+    
+    
     def get_wfmobj_keys(self, objname):
         api_route = '/get_wfmobj_keys/{}'.format(objname)
         return self.get_request(api_route)
