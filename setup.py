@@ -7,8 +7,8 @@ from setuptools import setup, find_packages
 
 
 setup(name='clientflexflow',
-      version='2.1',
-      description=' correct api route path c.get_ful_wfdoctype_as_dict',
+      version='2.2',
+      description='list_wfdoc_by_doctype',
       #long_description=readme(),
       url='https://gitlab.net.itc/tsp-billing/clientpaperhouse',
       author='Bhujay Kumar Bhatta',

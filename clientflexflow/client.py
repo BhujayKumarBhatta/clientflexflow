@@ -74,6 +74,12 @@ class clientflexflow():
         result_lst = self.get_request(api_route)
         return result_lst
     
+    def list_wfdoc_by_doctype(self, doctype):
+        '''used for dash board to list wfdoc  filtered by doctype '''
+        api_route = '/wfdoc/listbydoctype/{}'.format(doctype)
+        result_lst = self.get_request(api_route)
+        return result_lst
+    
     
     def get_wfmobj_keys(self, objname):
         api_route = '/get_wfmobj_keys/{}'.format(objname)
