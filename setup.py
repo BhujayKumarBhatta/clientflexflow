@@ -27,7 +27,7 @@ setup(name='clientflexflow',
           'configparser==3.5.0',
           'PyJWT==1.7.0',
           'PyYAML==3.13',
-          'cryptography==2.3.1',
+          'cryptography==3.2',
              
       ],
 #       entry_points = {
