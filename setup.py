@@ -26,7 +26,7 @@ setup(name='clientflexflow',
           'requests==2.20.1',
           'configparser==3.5.0',
           'PyJWT==1.7.0',
-          'PyYAML==3.13',
+          'PyYAML==5.4',
           'cryptography==2.3.1',
              
       ],
